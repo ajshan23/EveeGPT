@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import conf from "../conf/conf";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { AiOutlineSend } from "react-icons/ai";
+
 import { FaRobot,FaUserCircle  } from "react-icons/fa";
 import { IoSend } from "react-icons/io5";
 import img from "../image/appuimage.jpg"
 import './style.css'
+import logo from '../image/umbrion.png'
+import user from '../image/user.jpg'
+
 const Chat = () => {
   const genAI = new GoogleGenerativeAI(conf.apikey);
 
@@ -57,8 +60,9 @@ const Chat = () => {
     <>
       <div className="flex flex-col w-full h-full">
         <div className=" flex w-full h-20 justify-start items-center bg-[#502464]">
-          <div className="ml-44 text-white text-2xl font-bold">
-            EVEE GPT
+          <div className=" flex items-center ml-20 text-white text-2xl font-bold gap-3">
+            <div>EVEE GPT</div>
+            <div><img src={logo} alt="" width={40} height={40} className="" /></div>
           </div>
         </div>
         <div className="w-screen h-screen px-20 ">
@@ -75,8 +79,8 @@ const Chat = () => {
       }`}
       key={index}
     >
-      <div className={`w-10 h-10 rounded-full flex justify-center items-center ${item.role==='user'?' bg-green-700 ml-3':' bg-[#502464] mr-3 ' }`}>
-       {item.role==='user'? <FaUserCircle color="white" size={22}  />: <FaRobot color="white" size={22} />}
+      <div className={`w-10 h-10 rounded-full flex justify-center items-center overflow-hidden ${item.role==='user'?'bg-[#E8E8E8] ml-2':' bg-[#502464] mr-2 ' }`}>
+       {item.role==='user'? <img src={user}  className="rounded" />: <FaRobot color="white" size={21} />}
       </div>
       <div className={` mt-2 w-full h-full  flex ${item.role==='user' ?'bg-green-700 bg-opacity-30 rounded-tr-0 rounded-tl-lg rounded-b-lg' :'bg-[#502464] bg-opacity-30 rounded-tl-0 rounded-tr-lg rounded-b-lg'}`} >
         
