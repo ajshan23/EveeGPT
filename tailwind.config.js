@@ -8,7 +8,8 @@ export default {
     extend: {
       height:{
         "custom":"500px"
-      }
+      },
+       
     },
   },
   plugins: [],
