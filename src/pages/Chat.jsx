@@ -19,8 +19,6 @@ const Chat = () => {
  
   async function run() {
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    console.log(allResults);
-    
     const chat = model.startChat({
       
       history: history,
@@ -68,13 +66,13 @@ const Chat = () => {
         <div className="w-screen h-screen px-20 ">
           <div className=" flex flex-col w-full h-full gap-5 mt-10">
             <div>
-              <div className="scroll-container w-[60%] h-custom bg-opacity-10  border-[#502464] border-2 rounded-lg border-opacity-30 overflow-x-hidden overflow-y-scroll scroll-smooth" style={{backgroundImage:img}}>
+              <div className=" py-2 scroll-container w-[60%] h-custom bg-opacity-10  border-[#502464] border-2 rounded-lg border-opacity-30 overflow-x-hidden overflow-y-scroll scroll-smooth" style={{backgroundImage:img}}>
 
 
               {
    allResults.map((item, index) => (
     <div
-      className={`pt-10 px-10 flex transition-transform duration-1000 ease-in-out ${
+      className={`py-4 px-10 flex transition-transform duration-1000 ease-in-out ${
         item.role === 'user' ? ' flex-row-reverse ' : ''
       }`}
       key={index}
@@ -106,8 +104,8 @@ const Chat = () => {
                   onChange={(e) => setInput(e.target.value)}
                 />
               </div>
-              <div className=" border border-[#502464]  bg-[#502464] flex justify-center items-center px-4 rounded-lg border-opacity-50">
-                <button className=" -rotate-45 " onClick={handleSubmit}>
+              <div className=" border border-[#502464]  bg-[#502464] flex justify-center items-center px-4 rounded-lg border-opacity-50"  onClick={handleSubmit}>
+                <button className=" -rotate-45 ">
                   <IoSend scale={50} size={20} color="white" />
                 </button>
               </div>
