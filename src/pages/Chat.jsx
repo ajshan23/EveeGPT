@@ -23,7 +23,7 @@ const Chat = () => {
       
       history: history,
       generationConfig: {
-        maxOutputTokens: input.includes('more')? 300:100,
+        maxOutputTokens: input.includes('more')? 300:200,
       },
     });
    
