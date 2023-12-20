@@ -6,7 +6,7 @@ import { FaLocationPin } from "react-icons/fa6";
 import "./style.css";
 import logo from "../image/umbrion.png";
 import user from "../image/user.jpg";
-import { FadeLoader, RingLoader } from "react-spinners";
+import { FadeLoader, HashLoader, RingLoader } from "react-spinners";
 
 const Chat = () => {
   const genAI = new GoogleGenerativeAI(conf.apikey);
@@ -138,7 +138,7 @@ const Chat = () => {
                 {loading && (
                   <div className="flex justify-center items-center h-10">
                   {/* <RingLoader color="#ffffff" loading={true} size={50} /> */}
-                  <FadeLoader color="#ffffff"  loading={true} size={1}/>
+                  <HashLoader color="#ffffff"  loading={true} size={20}/>
                 </div>
                 )}
               </div>
