@@ -16,7 +16,8 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-icons": "^4.12.0",
-    "react-progress": "^0.0.12"
+    "react-progress": "^0.0.12",
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
