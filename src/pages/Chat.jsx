@@ -6,7 +6,7 @@ import { FaLocationPin } from "react-icons/fa6";
 import "./style.css";
 import logo from "../image/umbrion.png";
 import user from "../image/user.jpg";
-import { FadeLoader, HashLoader, RingLoader } from "react-spinners";
+import { HashLoader } from "react-spinners";
 
 const Chat = () => {
   const genAI = new GoogleGenerativeAI(conf.apikey);
@@ -28,7 +28,7 @@ const Chat = () => {
       const result = await chat.sendMessage(input);
       const response = await result.response;
       const text = await response.text();
-      // Within your JSX code, where you're rendering the response:
+
       const highlightedResponse = text.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
 
       console.log(text);
@@ -87,7 +87,8 @@ const Chat = () => {
             <div>
               <div
                 className=" bgstyle py-2 scroll-container w-[60%] h-custom  border-[#502464] border-2 rounded-lg border-opacity-30 overflow-x-hidden overflow-y-scroll scroll-smooth bg-cover bg-center transfrom delay-1000"
-                ref={chatContainerRef}
+                ref={chatContainerRef} 
+                
               >
                 {allResults.map((item, index) => (
                   <>
